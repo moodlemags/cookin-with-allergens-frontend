@@ -2,12 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
     <title></title>
   </head>
   <body>
-
-    <h1>Got allergies? No problem. </h1>
+    <header id="content-box">
+    <h1>Got allergies? No problem.</h1>
+    <h3><i class="em em-no_entry_sign"></i><i class="em em-baby_bottle"></i><i class="em em-question"></i><br>
+      <i class="em em-no_entry_sign"></i><i class="em em-bread"></i><i class="em em-question"></i><br>
+    <i class="em em-thumbsup"></i><i class="em em-cake"></i><i class="em em-thumbsup"></i></h3>
     <label> What allergies are we avoiding:
         <select id="search-endpoint">
           <option value="none" selected></option>
@@ -19,7 +23,24 @@
     <input type="text" name="" id="querySelector" value="">
     <button type="button" id="submitTest" name="button">submit</button>
 
-    <div id="putImage"></div>
+  </header>
+
+
+    <div id="recipe-result">
+
+    <h3>Recipe Title:
+      <span class="appended-response" id="recipe-title"></span>
+    </h3>
+
+    <p><span class="appended-response" id="recipe-image"></span></p>
+
+    <b><p>Ingredients: </p></b>
+    <p class="appended-response" id="recipe-ingredients"></p>
+
+    <!-- <b><span>Thumbnail: </span></b><br>
+    <span class="appended-response" id="char-thumb"></span><br> -->
+
+  </div>
 
 
     <script src="https://code.jquery.com/jquery-2.2.1.min.js" charset="utf-8"></script>

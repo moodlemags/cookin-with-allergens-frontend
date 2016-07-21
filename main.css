@@ -1,5 +1,25 @@
 body {
   background-color: #CEF0C2;
-  display: block-flex;
+  display: flex;
+  margin-top: 10%;
   color: #3E3740;
+
+}
+
+#content-box {
+  margin-left: 7%;
+  background-color: beige;
+  text-align: center;
+  align-self: flex-start;
+  width: 40vw;
+  height: 60vh;
+}
+
+#recipe-result {
+  background-color: beige;
+  text-align: center;
+  align-self: flex-end;
+  margin-left: 5%;
+  width: 40vw;
+  height: 60vh;
 }

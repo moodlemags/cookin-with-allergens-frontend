@@ -33,15 +33,16 @@ document.getElementById('submitTest').addEventListener('click', function(event){
           $.ajax(params).done(function(response) {
             console.log("response", response);
                   // printing name and ingredients list of receipe
-          var body = document.getElementById('putImage');
+          var body = document.getElementById('recipe-result');
           var recipeTitle = response.matches[0].recipeName
-          var domTitle = document.createElement('div');
-          body.appendChild(domTitle).innerHTML = recipeTitle;
+          var appendTitle = document.getElementById('recipe-image').innerHTML = recipeTitle;
                   // printing image of recipe requested
+          var imageTitle = document.getElementById('recipe-image');
           var printImage = response.matches[0].smallImageUrls[0];
-          var domImage = document.createElement('div');
-          body.appendChild(domImage)
-          domImage.innerHTML = '<img class="image" src="' + printImage + '" width=300px height=300px/>';
+          imageTitle.innerHTML = '<img class="image" src="' + printImage + '" width=150px height=150px/>';
+          var ingredientsTitle = document.getElementById('recipe-ingredients');
+          var printIngredients = response.matches[0].ingredients;
+          ingredientsTitle.innerHTML = printIngredients
 
           }); // end done function
 
