@@ -5,7 +5,25 @@ var url = 'https://aqueous-river-80760.herokuapp.com'
 
 var hidden = document.getElementById('email-yourself')
 hidden.style.display = 'none';
+// var hiddenMap = document.getElementById('mapHide')
+// hiddenMap.style.displey = 'none';
 
+var emailtext = "";
+var emailListener = document.getElementById('emailtype');
+emailListener.addEventListener('keydown', function(event){
+      emailtext+= event.key;
+      console.log(emailtext);
+
+      var submitEmail = document.getElementById('emailsubmit')
+      submitEmail.addEventListener('click', function(event){
+              // event.preventDefault();
+              console.log('clicked');
+              var recipeSending = document.getElementById('recipe-ingredients').innerText
+              submitEmail.setAttribute("href", "mailto:" + emailtext + "?body=" + recipeSending )
+              console.log(submitEmail);
+
+      }) // end submit emails
+    }) //end emailing self info
 
 //submitButton for user recipe selections
 document.getElementById('submitTest').addEventListener('click', function(event){
@@ -70,12 +88,6 @@ document.getElementById('submitTest').addEventListener('click', function(event){
                       //displaying email yourself again & emailing info
                         var hidden = document.getElementById('email-yourself')
                         hidden.style.display = 'block';
-                        var emailtext = "";
-                        var emailListener = document.getElementById('emailtype');
-                        emailListener.addEventListener('keydown', function(){
-                          emailtext+= event.key;
-                          console.log(emailtext);
-                        }) //end emailing self info
                     }); // end AJAX call
 
             // WITHIN CLICK LISTENER FOR RECIPE SEARCH: SEE ALL FAVORITES
@@ -104,8 +116,6 @@ document.getElementById('submitTest').addEventListener('click', function(event){
 
                             });
                           }); //end event listener
-
-
 
 
     //end fxns

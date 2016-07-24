@@ -5,7 +5,7 @@
 <title>Geolocation</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
-<!-- <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' /> -->
+<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
 <style>
   body { margin:0; padding:0; }
   #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -44,6 +44,11 @@ var geolocate = document.getElementById('geolocate');
 var map = L.mapbox.map('map', 'mapbox.streets');
 
 var myLayer = L.mapbox.featureLayer().addTo(map);
+
+
+var featureLayer = L.mapbox.featureLayer()
+    .loadURL('http://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/nysidewalkcafe/FeatureServer/0/query?where=1=1&outFields=*&outSR=4326&f=geojson')
+    .addTo(map);
 
 // This uses the HTML5 geolocation API, which is available on
 // most mobile browsers and modern browsers, but not in Internet Explorer
