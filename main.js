@@ -3,6 +3,8 @@ console.log('i am allliiiiiiiiiiiiiive');
 var url = 'https://aqueous-river-80760.herokuapp.com'
 //set up the page
 
+var hidden = document.getElementById('email-yourself')
+hidden.style.display = 'none';
 
 
 //submitButton for user recipe selections
@@ -47,6 +49,7 @@ document.getElementById('submitTest').addEventListener('click', function(event){
 
 
 
+
           // WITHIN CLICK LISTENER FOR RECIPE SEARCH: ADDING FAVORITE BUTTONS
               var favoriteRecipe = document.getElementById('favorite-recipe');
               favoriteRecipe.addEventListener('click', function(event){
@@ -64,6 +67,15 @@ document.getElementById('submitTest').addEventListener('click', function(event){
                       dataType: 'json'
                     }).done(function(response){
                       console.log('response', response);
+                      //displaying email yourself again & emailing info
+                        var hidden = document.getElementById('email-yourself')
+                        hidden.style.display = 'block';
+                        var emailtext = "";
+                        var emailListener = document.getElementById('emailtype');
+                        emailListener.addEventListener('keydown', function(){
+                          emailtext+= event.key;
+                          console.log(emailtext);
+                        }) //end emailing self info
                     }); // end AJAX call
 
             // WITHIN CLICK LISTENER FOR RECIPE SEARCH: SEE ALL FAVORITES
@@ -92,11 +104,6 @@ document.getElementById('submitTest').addEventListener('click', function(event){
 
                             });
                           }); //end event listener
-
-
-
-
-
 
 
 
