@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
     <title></title>
   </head>
@@ -15,8 +16,10 @@
     <label> What allergies are we avoiding:
         <select id="search-endpoint">
           <option value="none" selected></option>
-          <option value="gluten-free">Gluten-Free</option>
-          <option value="dairy-free">Dairy-Free</option>
+          <option value="gluten-free">Gluten-Free!</option>
+          <option value="dairy-free">Dairy-Free!</option>
+          <option value="peanut-free">No nuts!</option>
+          <option value="all-free">No nothin'</option>
         </select>
       </label>
 
@@ -24,31 +27,31 @@
     <button type="button" id="submitTest" name="button">submit</button>
 
   </header>
-
+        <!-- <img src="hitch.jpg" id="hitch-img" /> -->
 
     <div id="recipe-result">
 
-    <h3>Recipe Title:
-      <span class="appended-response" id="recipe-title"></span>
-    </h3>
+        <h3>Recipe Title:
+          <span class="appended-response" id="recipe-title"></span>
+        </h3>
 
-    <p><span class="appended-response" id="recipe-image"></span></p>
+        <p><span class="appended-response" id="recipe-image"></span></p>
 
-    <b><p>Ingredients: </p></b>
-    <p class="appended-response" id="recipe-ingredients"></p>
+        <b><p>Ingredients: </p></b>
+        <p class="appended-response" id="recipe-ingredients"></p>
 
-    <button type="button" id="favorite-recipe" name="favorite-recipe">Add recipe to favorites</button>
-    <button type="button" id="see-favorite-recipes" name="see-favorite-recipes">See all favorite recipes</button>
+        <button type="button" id="favorite-recipe" name="favorite-recipe">Add recipe to favorites</button>
+        <button type="button" id="see-favorite-recipes" name="see-favorite-recipes">See all favorite recipes</button>
 
-    <div id="see-recipes"></div>
-    <div id="email-yourself">
-      <input type="text" name="email" value="" id="emailtype" placeholder="enter your email here">
-      <button type="button" name="button" id="emailsubmit" a href="mailto:name@gmail.com">Submit</a></button>
+        <div id="see-recipes"></div>
+        <div id="email-yourself">
+            Want to make this recipe? Email yourself the ingredient list:
+            <br>
+        <input type="text" name="email" value="" id="emailtype" placeholder="enter your email here">
+        <button type="button" name="button" id="emailsubmit" a href="mailto:name@gmail.com">Submit</a></button>
 
 
-      <div id="find-stores"> <a href="maps.html">find local health stores</a></div>
-        <!-- <div id="mapHide"> <div class='sidebar pad2'>Listing</div>
-        <div id='map' class='map pad2'>Map</div> </div> -->
+        <div id="find-stores"> <a href="maps.html">find local health stores</a></div>
 
     </div>
 

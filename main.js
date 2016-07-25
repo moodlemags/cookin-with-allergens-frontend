@@ -19,7 +19,7 @@ emailListener.addEventListener('keydown', function(event){
               // event.preventDefault();
               console.log('clicked');
               var recipeSending = document.getElementById('recipe-ingredients').innerText
-              submitEmail.setAttribute("href", "mailto:" + emailtext + "?body=" + recipeSending )
+              submitEmail.setAttribute("href", "mailto:" + emailtext + "?body=The ingredients you need to buy are:  " + recipeSending )
               console.log(submitEmail);
 
       }) // end submit emails
@@ -47,7 +47,11 @@ document.getElementById('submitTest').addEventListener('click', function(event){
             params.data = {querySelector: recipeOrSearch, allergens: '&allowedAllergy[]=393^Gluten-Free'}
           } else if (proAllergen == 'dairy-free') {
             params.data= {querySelector: recipeOrSearch, allergens: '&allowedAllergy[]=396^Dairy-Free'}
-          } else {
+          } else if (proAllergen == 'peanut-free'){
+            params.data= {querySelector: recipeOrSearch, allergens: '&allowedAllergy[]=394^Peanut-Free'}
+          } else if (proAllergen == 'all-free') {
+            params.data= {querySelector: recipeOrSearch, allergens: '&allowedAllergy[]=394^Peanut-Free&allowedAllergy[]=396^Dairy-Free&allowedAllergy[]=393^Gluten-Free'}
+          }  else {
             params.data = {querySelector: recipeOrSearch, allergens: ''}
           }
 
